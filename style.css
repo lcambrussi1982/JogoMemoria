@@ -1,0 +1,129 @@
+:root {
+  --azul-royal: #1E3A8A; /* Azul Royal */
+  --azul-marinho: #0B2447; /* Azul Marinho */
+  --branco: #ffffff;
+  --amarelo: #FFD700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--azul-royal);
+  color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--azul-marinho);
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 15px;
+}
+
+header img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--branco);
+  color: var(--azul-royal);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.game-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background-color: var(--azul-royal);
+  color: var(--branco);
+  cursor: pointer;
+  border-radius: 8px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  user-select: none;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.card.flipped,
+.card.matched {
+  background-color: var(--amarelo);
+  color: var(--azul-royal);
+  cursor: default;
+  transform: scale(1.05);
+}
+
+.card.disabled {
+  pointer-events: none;
+}
+
+#restartBtn {
+  margin-top: 25px;
+  display: block;
+  background-color: var(--azul-marinho);
+  color: var(--branco);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+#restartBtn:hover {
+  background-color: var(--azul-royal);
+}
+
+footer {
+  background-color: var(--azul-marinho);
+  color: var(--branco);
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    height: 70px;
+    font-size: 1.1rem;
+  }
+  header h1 {
+    font-size: 1.1rem;
+  }
+}
