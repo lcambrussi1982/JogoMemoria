@@ -44,7 +44,7 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centraliza verticalmente */
+  justify-content: center;  /* Centraliza verticalmente */
   align-items: center;      /* Centraliza horizontalmente */
   background-color: var(--branco);
   color: var(--azul-royal);
@@ -120,14 +120,24 @@ footer {
   font-weight: 600;
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
+
+/* Tablets e celulares grandes (600px a 768px) → 3 colunas */
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+/* Celulares médios (400px a 600px) → também 3 colunas */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Celulares pequenos (menos de 400px) → 2 colunas */
+@media (max-width: 400px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
