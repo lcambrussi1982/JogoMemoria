@@ -42,13 +42,13 @@ header h1 {
 
 main {
   flex: 1;
-  padding: 20px;
-  background-color: var(--branco);
-  color: var(--azul-royal);
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centraliza verticalmente */
   align-items: center;      /* Centraliza horizontalmente */
+  background-color: var(--branco);
+  color: var(--azul-royal);
+  padding: 20px;
 }
 
 .game-container {
@@ -64,6 +64,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
+  width: 100%;
 }
 
 .card {
@@ -119,14 +120,23 @@ footer {
   font-weight: 600;
 }
 
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .card {
     height: 70px;
     font-size: 1.1rem;
   }
+
   header h1 {
     font-size: 1.1rem;
   }
